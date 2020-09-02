@@ -56,6 +56,7 @@ def click_listener():
             else:
                 final = py.position()
     print(start, final)
+    data.set_postion(start, final)
     click_listener()
 
 if __name__ == "__main__":
@@ -64,3 +65,4 @@ if __name__ == "__main__":
 
     t2 = threading.Thread(target=click_listener)
     t2.start()
+ 

@@ -31,9 +31,10 @@ class Ui_W_selector(object):
 
     def open_att(self, W_selector):
         index = data.index_atts()
+        p_x, p_y = data.get_position()
         width = len(index) * 100
         W_selector.resize(width, 33)
-        # W_selector.move(x,y)
+        W_selector.move(p_x, p_y)
         for element in index:
             newBtn = QPushButton(element, self)
             newBtn.move(self.position_x, self.position_y)
