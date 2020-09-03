@@ -3,27 +3,15 @@ import threading
 import pyautogui as py
 import win32api as wp
 import screen as sc
-import database as data
+import web_communication as web
 
-def get_information():
-    # buscar a informação no Win e salve em cache
-    # assim que um index for pressionado salva o chache no dicionario
-    pass
-
-def new_service():
-    # quando detecta um novo chat
-    data.create('nome')
-
-def completed_service():
-    # quando finaliza um chat
-    pass
 
 def action(key):
     key_data = str(key)
 
     if key_data == 'Key.ctrl_l' or key_data == 'Key.ctrl_r':
         print('Pergunta')
-        get_information()
+        web.get_information()
         sc.Selector()
 
     if key_data == 'Key.shift' or key_data == 'Key.shift_r':
@@ -47,7 +35,6 @@ def click_listener():
     final = 0
     while start == 0 or final == 0:
         a = wp.GetKeyState(0x01)
-        b = wp.GetKeyState(0x02)
 
         if a != state_left:
             state_left = a
@@ -56,7 +43,7 @@ def click_listener():
             else:
                 final = py.position()
     print(start, final)
-    data.set_postion(start, final)
+    web.set_postion(start, final)
     click_listener()
 
 if __name__ == "__main__":
