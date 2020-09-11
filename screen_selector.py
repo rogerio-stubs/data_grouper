@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QPushButton
 from PyQt5.QtCore import QTimer
 
-import web_communication as web
+import controller as ct
 
 class Ui_W_selector(object):
     def setupUi(self, W_selector):
@@ -30,8 +30,8 @@ class Ui_W_selector(object):
         W_selector.setWindowTitle(_translate("W_selector", "MainWindow"))
 
     def open_att(self, W_selector):        
-        index = web.get_name()
-        p_x, p_y = web.get_position()
+        index = ct.get_name()
+        p_x, p_y = ct.get_position()
         width = len(index) * 100
         W_selector.resize(width, 33)
         W_selector.move(p_x, p_y)
