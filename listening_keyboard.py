@@ -7,11 +7,12 @@ def key_action(key):
 
     if key_data == 'Key.ctrl_l' or key_data == 'Key.ctrl_r':
         print('Pergunta')
-        # web.get_information()
+        ct.get_information()
         sc.Selector()
 
     if key_data == 'Key.shift' or key_data == 'Key.shift_r':
         print('Resposta')
+        ct.get_information()
         sc.Selector()
 
     if key_data == 'Key.alt_l':
