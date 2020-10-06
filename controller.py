@@ -2,6 +2,9 @@ from bs4 import BeautifulSoup
 import win32clipboard as clipboard
 import pyautogui 
 import pyperclip
+import time
+import database as data
+
 index = list()
 position = list()
 
@@ -21,15 +24,19 @@ def get_position():
 
     return position[0], position[1]
 
-def get_information():
+def get_information(question):
     # falta apagar o valor na área de transferência 
     pyautogui.hotkey('ctrl', 'c')
-    s = pyperclip.paste()
-    print('retorno da área de tran sferência', s)
+    time.sleep(0.001)
+    data_copy = pyperclip.paste()
+    if question is True:
+        data.saved_question(data_copy)
+        print('question')
+    else:
+        data.saved_answer(data_copy)
+
 
 def new_service():
-    # soup = BeautifulSoup(file:///C:/Development/code-test/web-teste/index.html)
-    # index.append(name)
     pass
 
 def completed_service():

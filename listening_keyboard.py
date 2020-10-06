@@ -7,20 +7,17 @@ def key_action(key):
 
     if key_data == 'Key.ctrl_l' or key_data == 'Key.ctrl_r':
         print('Pergunta')
-        ct.get_information()
+        ct.get_information(True)
         sc.Selector()
 
-    if key_data == 'Key.shift' or key_data == 'Key.shift_r':
+    if key_data == 'Key.esc' or key_data == 'Key.esc':
         print('Resposta')
-        ct.get_information()
+        ct.get_information(False)
         sc.Selector()
 
     if key_data == 'Key.alt_l':
         print('Abrir busca')
         sc.Search()
-
-    if key_data == 'Key.esc':
-        print('FINALIZAR')
 
 def keyboard():
     with Listener(on_press=key_action) as listener:
