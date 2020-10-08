@@ -32,7 +32,7 @@ class Ui_W_search(object):
     def retranslateUi(self, W_search):
         _translate = QtCore.QCoreApplication.translate
         W_search.setWindowTitle(_translate("W_search", "MainWindow"))
-        self.btn_close.setText(_translate("W_search", "Finalizar"))
+        self.btn_close.setText(_translate("W_search", "Chat 1"))
         self.btn_seach.setText(_translate("W_search", "Procurar"))
 
     def send_search(self):
