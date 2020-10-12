@@ -4,8 +4,8 @@ import listening_mouse as lm
 
 
 if __name__ == "__main__":
-    t1 = threading.Thread(target=lk.keyboard)
-    t1.start()
+    keyboard_thread = threading.Thread(target=lk.keyboard)
+    keyboard_thread.start()
 
-    t2 = threading.Thread(target=lm.mouse)
-    t2.start()
+    mouse_thread = threading.Thread(target=lm.mouse)
+    mouse_thread.start()
