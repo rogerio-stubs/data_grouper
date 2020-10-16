@@ -27,7 +27,6 @@ def get_position():
     return position[0], position[1]
 
 def get_information(question):
-    # falta apagar o valor na área de transferência 
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(0.001)
     data_copy = pyperclip.paste()
