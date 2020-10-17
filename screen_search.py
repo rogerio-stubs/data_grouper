@@ -25,8 +25,8 @@ class Ui_W_search(object):
         W_search.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(W_search)
+        # self.btn_close.clicked.connect(W_search.close)
         self.btn_seach.clicked.connect(self.send_search)
-        # self.btn_close.clicked.connect(self.end_application)
         QtCore.QMetaObject.connectSlotsByName(W_search)
 
     def retranslateUi(self, W_search):

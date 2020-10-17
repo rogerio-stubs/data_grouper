@@ -29,7 +29,7 @@ class Ui_W_selector(object):
         _translate = QtCore.QCoreApplication.translate
         W_selector.setWindowTitle(_translate("W_selector", "MainWindow"))
 
-    def open_att(self, W_selector):        
+    def open_att(self, W_selector):
         index = ct.get_name()
         p_x, p_y = ct.get_position()
         width = len(index) * 100
