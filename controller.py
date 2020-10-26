@@ -10,8 +10,8 @@ position = list()
 
 def get_name():
     # devolver para a interface o nome dos atendimentos
-    index.append('chat 1')
-    index.append('chat 2')
+    # index.append('chat 1')
+    # index.append('chat 2')
     return index
 
 def set_postion(height, width):
