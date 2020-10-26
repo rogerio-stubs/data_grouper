@@ -9,10 +9,3 @@ keyboard_thread = threading.Thread(target=lk.keyboard)
 def start():
     keyboard_thread.start()
     mouse_thread.start()
-
-def finish():
-    keyboard_thread.join()
-    mouse_thread.join()
-    sys.exit()
-
-

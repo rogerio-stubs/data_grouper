@@ -22,3 +22,4 @@ def key_action(key):
 def keyboard():
     with Listener(on_press=key_action) as listener:
         listener.join()
+        print('teste')
