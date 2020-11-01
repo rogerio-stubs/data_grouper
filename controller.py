@@ -18,8 +18,11 @@ def set_postion(height, width):
     position.clear()
     position.append(min(height))
     position.append(min(width))
+    print('set_position', position)
 
 def get_position():
+    print('get_position', position)
+    print('tamanho', len(position))
     if len(position) == 0:
         position.append(100)
         position.append(100)
@@ -41,5 +44,4 @@ def new_service():
     pass
 
 def completed_service():
-    # quando finaliza um chat
     pass

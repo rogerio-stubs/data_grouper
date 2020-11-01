@@ -1,9 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-import threading
-import os
 
-import listening_keyboard as lk
-import listening_mouse as lm
 import manager as mn
 
 class Ui_Manager(object):
@@ -41,5 +37,5 @@ class Ui_Manager(object):
         mn.start()
 
     def finish(self):
-        print('parando')
-        os._exit()
+        mn.finish()
+        
