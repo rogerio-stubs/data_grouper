@@ -11,7 +11,6 @@ def on_click(x, y, button, pressed):
     else:
         height.append(x)
         width.append(y)
-        print('height, width', height, width)
         ct.set_postion(height, width)
         height.clear()
         width.clear()

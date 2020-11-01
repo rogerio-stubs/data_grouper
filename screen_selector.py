@@ -34,7 +34,7 @@ class Ui_W_selector(object):
         p_x, p_y = ct.get_position()
         width = len(index) * 100
         W_selector.resize(width, 33)
-        # W_selector.move(p_x, p_y)
+        # W_selector.move(p_x, p_y) # Paliativo
         for element in index:
             newBtn = QPushButton(element, self)
             newBtn.move(self.position_x, self.position_y)
