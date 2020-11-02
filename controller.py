@@ -4,6 +4,7 @@ import pyautogui
 import pyperclip
 import time
 import database as data
+import win32clipboard
 
 index = list()
 position = list()
@@ -25,8 +26,12 @@ def get_position():
 
 def get_information(question):
     pyautogui.hotkey('ctrl', 'c')
-    time.sleep(0.001)
-    data_copy = pyperclip.paste()
+    time.sleep(1)
+    win32clipboard.OpenClipboard()
+    data_copy = win32clipboard.GetClipboardData()
+    back = win32clipboard.EmptyClipboard()
+    print('retorno', back)
+    win32clipboard.CloseClipboard()
     if question is True:
         data.saved_question(data_copy)
     else:

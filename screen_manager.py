@@ -38,4 +38,3 @@ class Ui_Manager(object):
 
     def finish(self):
         mn.finish()
-        
