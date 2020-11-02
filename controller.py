@@ -7,6 +7,7 @@ import database as data
 import win32clipboard
 
 index = list()
+index.append('Chat')
 position = list()
 
 def get_name():
@@ -29,8 +30,6 @@ def get_information(question):
     time.sleep(1)
     win32clipboard.OpenClipboard()
     data_copy = win32clipboard.GetClipboardData()
-    back = win32clipboard.EmptyClipboard()
-    print('retorno', back)
     win32clipboard.CloseClipboard()
     if question is True:
         data.saved_question(data_copy)
