@@ -1,7 +1,4 @@
-from bs4 import BeautifulSoup
-import win32clipboard as clipboard
-import pyautogui 
-import pyperclip
+import pyautogui
 import time
 import database as data
 import win32clipboard
