@@ -9,14 +9,14 @@ def saved_answer(data):
     inserting_data(param)
 
 def inserting_data(information):
-    if os.path.isfile('C:/Development/BD_grouper/novo-arquivo.txt') is False:
-        archive = open('C:/Development/BD_grouper/novo-arquivo.txt', 'w')
+    if os.path.isfile('C:/db-grouper/my-data.txt') is False:
+        archive = open('C:/db-grouper/my-data.txt', 'w')
         archive.writelines(information)
         archive.close()
     else:
-        archive = open('C:/Development/BD_grouper/novo-arquivo.txt', 'r')
+        archive = open('C:/db-grouper/my-data.txt', 'r')
         content = archive.readlines()
         content.append(information)
-        archive = open('C:/Development/BD_grouper/novo-arquivo.txt', 'w')
+        archive = open('C:/db-grouper/my-data.txt', 'w')
         archive.writelines(content)
 
