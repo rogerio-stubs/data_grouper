@@ -1,4 +1,10 @@
-import os.path
+from pymongo import MongoClient
+
+client = MongoClient('localhost', 27017)
+# cliente = MongoClient('mongodb://localhost:27017/')
+database = client.dataGrouperDB
+information = database.dataDB
+
 
 def saved_question(data):
     param = 'Pergunta: ' + ' '.join(str(data).split()) + '\n'
@@ -9,14 +15,5 @@ def saved_answer(data):
     inserting_data(param)
 
 def inserting_data(information):
-    if os.path.isfile('C:/db-grouper/my-data.txt') is False:
-        archive = open('C:/db-grouper/my-data.txt', 'w')
-        archive.writelines(information)
-        archive.close()
-    else:
-        archive = open('C:/db-grouper/my-data.txt', 'r')
-        content = archive.readlines()
-        content.append(information)
-        archive = open('C:/db-grouper/my-data.txt', 'w')
-        archive.writelines(content)
-
+    pass
+    

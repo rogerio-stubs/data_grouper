@@ -28,6 +28,7 @@ def get_information(question):
     win32clipboard.OpenClipboard()
     data_copy = win32clipboard.GetClipboardData()
     win32clipboard.CloseClipboard()
+    
     if question is True:
         data.saved_question(data_copy)
     else:
