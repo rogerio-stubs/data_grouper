@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-import manager as mn
+from controller import manager
 
 class Ui_Manager(object):
     def setupUi(self, Manager):
@@ -34,7 +33,7 @@ class Ui_Manager(object):
         self.btn_finish.setText(_translate("Manager", "Finish"))
 
     def start(self):
-        mn.start()
+        manager.start()
 
     def finish(self):
-        mn.finish()
+        manager.finish()

@@ -1,10 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QApplication  
+from PyQt5.QtWidgets import QApplication
+from view import screen_selector, screen_manager, screen_search
 import sys
-import screen_search
-import screen_selector
-import screen_manager
-
 
 class ScreenSelector(QtWidgets.QMainWindow, screen_selector.Ui_W_selector):
     def __init__(self, parent=None):

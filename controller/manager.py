@@ -1,10 +1,10 @@
+from controller import listen_mouse, listen_keyboard
 import sys
 import multiprocessing
-import listening_keyboard as lk
-import listening_mouse as lm
 
-mouse_thread = multiprocessing.Process(target=lm.mouse)
-keyboard_thread = multiprocessing.Process(target=lk.keyboard)
+
+mouse_thread = multiprocessing.Process(target=listen_mouse.mouse)
+keyboard_thread = multiprocessing.Process(target=listen_keyboard.keyboard)
 
 def start():
     keyboard_thread.start()

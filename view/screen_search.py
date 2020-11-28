@@ -1,8 +1,8 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from controller import manager
 from PyQt5.QtWidgets import QPushButton
 
 import database as data
-import manager as mn
 
 class Ui_W_search(object):
     def setupUi(self, W_search):
@@ -49,4 +49,4 @@ class Ui_W_search(object):
         self.label_answer.setText(my_text)
 
     def finish(self):
-        mn.finish()
+        manager.finish()

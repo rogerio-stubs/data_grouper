@@ -1,5 +1,5 @@
 from pynput.mouse import Listener
-import controller as ct
+from controller import controller
 
 height = list()
 width = list()
@@ -11,7 +11,8 @@ def on_click(x, y, button, pressed):
     else:
         height.append(x)
         width.append(y)
-        ct.set_postion(height, width)
+
+        controller.set_postion(height, width)
         height.clear()
         width.clear()
 
