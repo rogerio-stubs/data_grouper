@@ -1,18 +1,18 @@
 from pynput.keyboard import Listener
 from view import screen
-import controller as ct
+from controller import controller
 
 def key_action(key):
     key_data = str(key)
 
     if key_data == 'Key.ctrl_l' or key_data == 'Key.ctrl_r':
         print('Pergunta')
-        ct.get_information(True)
+        controller.get_information(True)
         screen.Selector()
 
     if key_data == 'Key.esc' or key_data == 'Key.esc':
         print('Resposta')
-        ct.get_information(False)
+        controller.get_information(False)
         screen.Selector()
 
     if key_data == 'Key.alt_l':

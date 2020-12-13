@@ -1,7 +1,8 @@
+from database import services
 import pyautogui
 import time
-import database as data
 import win32clipboard
+import requests
 
 index = list()
 index.append('Chat')
@@ -34,13 +35,15 @@ def get_information(question):
     win32clipboard.CloseClipboard()
 
     if question is True:
-        data.saved_question(data_copy)
+        pass
+        # data.saved_question(data_copy)
     else:
-        data.saved_answer(data_copy)
+        pass
+        # data.saved_answer(data_copy)
 
 
 def new_service():
-    pass
+    services.retorno()
 
 
 def completed_service():
