@@ -1,3 +1,6 @@
+from pymongo import MongoClient
+from database.connection import documentations
+
 def saved_question(data):
     param = 'Pergunta: {0}\n'.format(' '.join(str(data).split()))
     inserting_data(param)
