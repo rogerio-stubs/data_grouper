@@ -1,8 +1,8 @@
-from database import services
+from database import chats
 import pyautogui
 import time
 import win32clipboard
-import requests
+
 
 index = list()
 index.append('Chat')
@@ -43,7 +43,7 @@ def get_information(question):
 
 
 def new_service():
-    services.retorno()
+    chats.chats_list()
 
 
 def completed_service():
