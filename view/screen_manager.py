@@ -1,5 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
-from controller import manager
+from controller import manager, controller
+from database import agents
 
 class Ui_Manager(object):
     def setupUi(self, Manager):
@@ -33,7 +34,12 @@ class Ui_Manager(object):
         self.btn_finish.setText(_translate("Manager", "Finish"))
 
     def start(self):
-        manager.start()
+        agent_id = agents.login("rogerio", "123")
+        if isinstance(agent_id, int):
+            controller.set_agent(agent_id)
+            manager.start()
+        else:
+            print(agent_id)
 
     def finish(self):
         manager.finish()

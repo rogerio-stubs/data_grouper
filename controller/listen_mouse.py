@@ -11,7 +11,6 @@ def on_click(x, y, button, pressed):
     else:
         height.append(x)
         width.append(y)
-
         controller.set_postion(height, width)
         height.clear()
         width.clear()

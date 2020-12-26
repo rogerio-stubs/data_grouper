@@ -7,11 +7,13 @@ def key_action(key):
 
     if key_data == 'Key.ctrl_l' or key_data == 'Key.ctrl_r':
         print('Pergunta')
+        controller.agent()
         controller.get_information(True)
         screen.Selector()
 
     if key_data == 'Key.esc' or key_data == 'Key.esc':
         print('Resposta')
+        controller.agent()
         controller.get_information(False)
         screen.Selector()
 

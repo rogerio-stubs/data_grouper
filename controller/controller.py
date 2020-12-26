@@ -3,14 +3,26 @@ import pyautogui
 import time
 import win32clipboard
 
-
-index = list()
-index.append('Chat')
+visitor_name = list()
+chats_list = list()
 position = list()
+agent_id = 666
 
+# Não está funcionando
+def set_agent(id):
+    agent_id = id
+
+def agent():
+    global chats_list
+    chats_list = chats.db_chats(agent_id)
 
 def get_name():
-    return index
+    visitor_name.clear()  # por enquanto ele simplesmente limpa o array
+    print(type(chats_list))
+    for visitante in chats_list:
+        print(f"visitante {visitante}")
+        visitor_name.append(visitante.get("nome_visitante"))
+    return visitor_name
 
 
 def set_postion(height, width):
@@ -42,8 +54,8 @@ def get_information(question):
         # data.saved_answer(data_copy)
 
 
-def new_service():
-    chats.chats_list()
+def new_service(agent_id):
+    pass
 
 
 def completed_service():
