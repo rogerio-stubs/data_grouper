@@ -9,13 +9,11 @@ def key_action(key):
         print('Pergunta')
         controller.agent()
         controller.get_information(True)
-        screen.Selector()
 
     if key_data == 'Key.esc' or key_data == 'Key.esc':
         print('Resposta')
         controller.agent()
         controller.get_information(False)
-        screen.Selector()
 
     if key_data == 'Key.alt_l':
         print('Abrir busca')

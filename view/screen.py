@@ -3,10 +3,10 @@ from PyQt5.QtWidgets import QApplication
 from view import screen_selector, screen_manager, screen_search
 import sys
 
-class ScreenSelector(QtWidgets.QMainWindow, screen_selector.Ui_W_selector):
-    def __init__(self, parent=None):
-        super(ScreenSelector, self).__init__(parent)
-        self.setupUi(self)
+from view.screen_selector import Widget
+from view.screen_manager import Ui_Manager
+
+
 
 class ScreenSearch(QtWidgets.QMainWindow, screen_search.Ui_W_search):
     def __init__(self, parent=None):
@@ -20,8 +20,8 @@ class ScreenManager(QtWidgets.QMainWindow, screen_manager.Ui_Manager):
 
 def Selector():
     app_selector = QApplication(sys.argv)
-    form_selector = ScreenSelector()
-    form_selector.show()
+    widget = Widget()
+    widget.show()
     app_selector.exec_()
 
 def Search():
