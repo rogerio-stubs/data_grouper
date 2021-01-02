@@ -1,15 +1,5 @@
 from pymongo import MongoClient
 from database.connection import documentations
 
-def saved_question(data):
-    param = 'Pergunta: {0}\n'.format(' '.join(str(data).split()))
-    inserting_data(param)
-
-
-def saved_answer(data):
-    param = 'Resposta: {0}\n'.format(' '.join(str(data).split()))
-    inserting_data(param)
-
-
-def inserting_data(information):
-    pass
+def insert_documentation(data):
+    documentations.insert_one(data)

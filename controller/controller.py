@@ -1,13 +1,15 @@
-from database import chats
+from database import chats, documentations
 from view import screen
 import pyautogui
 import time
 import win32clipboard
 
-visitor_name = list()
+
 visitor = dict()
-chats_list = list()
+json_client = dict()
 json_list = dict()
+
+chats_list = list()
 position = list()
 agent_id = 666
 
@@ -22,11 +24,9 @@ def agent():
     chats_list = chats.db_chats(agent_id)
 
 def get_client():
-    # por enquanto ele simplesmente limpa o array
-    visitor_name.clear()
+    visitor.clear()
     for visitante in chats_list:
         visitor.update({visitante.get("id_visitante"): visitante.get("nome_visitante")})
-        visitor_name.append(visitante.get("nome_visitante"))
     return visitor
 
 def set_postion(height, width):
@@ -42,14 +42,20 @@ def get_position():
     return position[0], position[1]
 
 def get_information(question):
+    global json_client
+    json_client.clear()
     pyautogui.hotkey('ctrl', 'c')
     time.sleep(1)
     win32clipboard.OpenClipboard()
     data_copy = win32clipboard.GetClipboardData()
     win32clipboard.CloseClipboard()
+    data_copy = data_copy.strip()
     print(f"informação copiada: {data_copy}")
+    json_client = {"Pergunta": data_copy} if question else {"Resposta": data_copy}
     screen.Selector()
 
+def insert_client(id_client):
+    json_list.update({"id": id_client, "documentation": json_client})
 
-def create_json():
-    pass
+def finished_chats():
+    documentations.insert_documentation(json_client)

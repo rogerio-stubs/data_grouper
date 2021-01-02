@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout, QApplication, QWidget, QTo
 from controller import controller
 
 class Widget(QWidget):
+
     def __init__(self):
         QWidget.__init__(self)
         layout = QVBoxLayout(self)
@@ -10,8 +11,12 @@ class Widget(QWidget):
         index = controller.get_client()
         for key, value in index.items():
             self.buttons.append(QPushButton(value, self))
-            self.buttons[-1].clicked.connect(partial(client_id, data=key))
+            self.buttons[-1].clicked.connect(partial(self.client_id, data=key))
             layout.addWidget(self.buttons[-1])
 
-def client_id(data="\n"):
-    print(f"data {data}")
+    def client_id(self, data=""):
+        print(f"data {data}")
+        controller.insert_client(data)
+        self.close()
+
+
